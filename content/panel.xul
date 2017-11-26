@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://komodo/skin/" type="text/css"?>
 <?xml-stylesheet href="less://komodo/skin/global/global.less" type="text/css"?>
-<?xml-stylesheet href="chrome://OpenWindows/skin/OpenWindows.css" type="text/css"?>
+<?xml-stylesheet href="less://OpenWindows/skin/OpenWindows.less" type="text/css"?>
 
 <!-- ***** BEGIN LICENSE BLOCK *****
 - Version: MPL 1.1/GPL 2.0/LGPL 2.1
@@ -40,14 +40,24 @@
 - ***** END LICENSE BLOCK ***** -->
 
 <page xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-	<vbox id="panelOpenWindowsLabel" flex="1">
+	<vbox id="panelOpenWindowsLabel">
 		<hbox id="openfilesPrefHbox" class="status-toolbar" align="center">
 			<label class="panel-label desc" value="Open windows" flex="1" />
 		</hbox>
 	</vbox>
-	<vbox id="OpenWindows-first-tabpanel-vbox" flex="1" align="left" class="toolbar-box">
+	<vbox id="OpenWindows-first-tabpanel-vbox" align="stretch">
+		
 		<listbox id="openWindowsList" flex="1">
+			<listhead>
+				<listheader label="Project" />
+				<listheader label="Places" />
+			</listhead>
 			
+			<listcols>
+				<listcol flex="1" />
+				<listcol flex="1" />
+			</listcols>
+	
 		</listbox>
 	</vbox>
 

@@ -1,0 +1,19 @@
+@import url("chrome://komodo/skin/global/colors.less");
+@import url("resource://profile/colors.less");
+
+#OpenWindows-first-tabpanel-vbox {
+	overflow: auto;
+	#openWindowsList {
+		min-width: 100%;
+		listitem {
+			&[selected="true"] {
+				background-color: @background;
+			}
+			&.current {
+				background-color: @selected;
+				color: @selected-foreground;
+			}
+		}
+	}
+}
+
