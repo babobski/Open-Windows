@@ -1,0 +1,3 @@
+content OpenWindows content/
+overlay chrome://komodo/content/komodo.xul chrome://OpenWindows/content/overlay.xul
+skin OpenWindows classic/1.0 skin/

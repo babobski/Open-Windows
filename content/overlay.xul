@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<overlay id="OpenWindows" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script type="application/x-javascript" src="chrome://OpenWindows/content/overlay.js" />
+	
+	<commandset id="allcommands">
+	  <command id="Tasks:ReplaceEnteties" oncommand="extensions.OpenWindows.replaceEnteties();"/>
+    </commandset>
+	
+	<ko-pane id="workspace_left_area">
+    <browser type="ko-widget"
+			 id="OpenWindowsViewbox"
+			 label="Open Windows"
+             position="10" insertbefore="codebrowserviewbox"
+             tab_oncommand=""
+             tab_onfocus=""
+	         src="chrome://OpenWindows/content/panel.xul"/>
+  </ko-pane>
+	
+</overlay>
