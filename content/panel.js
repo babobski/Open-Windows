@@ -3,7 +3,7 @@
 		self = this,
 		listBuild;
 	
-	window.removeEventListener('focus', self.buildList);
+	//window.removeEventListener('focus', self.buildList);
 	window.removeEventListener('load', self.delayedStartup);
 	
 	this.buildList = function() {
@@ -12,7 +12,6 @@
 		var listItems = extensions.OpenWindows.generateOpenWindowsList();
 		
 		if (listItems === undefined) {
-			inBuild = false;
 			if (retryCount < 22) {
 				setTimeout(function(){
 					buildList();
@@ -69,7 +68,7 @@
 	};
 	
 	
-	window.addEventListener('focus', self.buildList);
+	//window.addEventListener('focus', self.buildList);
 	window.addEventListener('load', self.delayedStartup);
 }).apply();
 	

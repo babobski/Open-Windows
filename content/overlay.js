@@ -30,7 +30,7 @@ if (typeof(extensions.OpenWindows) === 'undefined') extensions.OpenWindows = { v
 			var util = win.QueryInterface(Components.interfaces.nsIInterfaceRequestor).getInterface(Components.interfaces.nsIDOMWindowUtils);
 			var windowID = util.outerWindowID;
 			
-			if (win.ko === undefined) {
+			if (win.ko === undefined || win.length === 0) {
 				return;
 			}
 			
