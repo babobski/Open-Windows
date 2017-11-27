@@ -1,3 +1,6 @@
 # Open Windows Widget
 
-Shows the current open Komodo Windows, by project name or if not set the places root.
+Show the current open Komodo windows in a widget.  
+The widget show's the open project in that window and the current open places root.
+
+[screenshot](screenshot.jpg)
