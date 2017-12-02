@@ -3,7 +3,7 @@
 		self = this,
 		listBuild;
 	
-	//window.removeEventListener('focus', self.buildList);
+	window.removeEventListener('focus', self.focusClickHandler);
 	window.removeEventListener('load', self.delayedStartup);
 	
 	this.buildList = function() {
@@ -43,8 +43,8 @@
 				listItem.classList.add('current');
 			}
 			
-			listItem.setAttribute('data-id', listItems[i].id);
 			listItem.setAttribute('onclick', 'extensions.OpenWindows.focusWindow('+ listItems[i].id +');');
+			listItem.setAttribute('data-id', listItems[i].id);
 			listItem.appendChild(projectCol);
 			listItem.appendChild(placesCol);
 			list.appendChild(listItem);
@@ -67,8 +67,14 @@
 		}, 4000);
 	};
 	
+	// Trigger click on focus
+	this.focusClickHandler = function(event) {
+		if (event.explicitOriginalTarget.localName === 'listitem') {
+			event.explicitOriginalTarget.onclick();
+		}
+	};
 	
-	//window.addEventListener('focus', self.buildList);
+	window.addEventListener('focus', self.focusClickHandler);
 	window.addEventListener('load', self.delayedStartup);
 }).apply();
 	

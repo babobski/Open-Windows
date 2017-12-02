@@ -62,11 +62,14 @@ if (typeof(extensions.OpenWindows) === 'undefined') extensions.OpenWindows = { v
 			var windowID = util.outerWindowID;
 			if (windowID == windowId) {
 				win.focus();
+				if (typeof win.onfocus === 'function') {
+					win.onfocus();
+				}
 				return;
 			}
 			index++;
 		}
-	}
+	};
 	
 	this.updateLists = function() {
 		var wenum = Components.classes["@mozilla.org/embedcomp/window-watcher;1"]

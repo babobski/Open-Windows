@@ -41,6 +41,9 @@
 
 <page xmlns:html="http://www.w3.org/1999/xhtml" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	<vbox id="panelOpenWindowsLabel">
+		<hbox id="OpenFilesPanelSplitterHboxBorder">
+			<spacer flex="1"/>
+		</hbox>
 		<hbox id="openfilesPrefHbox" class="status-toolbar" align="center">
 			<label class="panel-label desc" value="Open windows" flex="1" />
 		</hbox>
