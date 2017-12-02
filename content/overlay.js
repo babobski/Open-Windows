@@ -2,7 +2,7 @@
  * Namespaces
  */
 if (typeof(extensions) === 'undefined') extensions = {};
-if (typeof(extensions.OpenWindows) === 'undefined') extensions.OpenWindows = { version : '1.8' };
+if (typeof(extensions.OpenWindows) === 'undefined') extensions.OpenWindows = { version : '1.0' };
 
 (function() {
 	var self = this,
