@@ -5,6 +5,7 @@ if (typeof(extensions) === 'undefined') extensions = {};
 if (typeof(extensions.OpenWindows) === 'undefined') extensions.OpenWindows = { version : '1.0' };
 
 (function() {
+	const fsPath = require('sdk/fs/path');
 	var self = this,
 		prefs = Components.classes["@mozilla.org/preferences-service;1"]
         .getService(Components.interfaces.nsIPrefService).getBranch("extensions.OpenWindows."),
@@ -42,8 +43,7 @@ if (typeof(extensions.OpenWindows) === 'undefined') extensions.OpenWindows = { v
 			
 			if (currPlacesItem !== null) {
 				var cleanUrl = currPlacesItem.replace('file:///', '');
-				var startSecString = cleanUrl.length > 15 ? cleanUrl.length - 15 : cleanUrl.length - 7;
-				places = '...' + cleanUrl.substr(startSecString, cleanUrl.length);
+				places = fsPath.basename(cleanUrl);
 			}
 			index++;
 			openWindows.push({id: windowID, project: project, places: places, current: win.isActive});
@@ -65,6 +65,23 @@ if (typeof(extensions.OpenWindows) === 'undefined') extensions.OpenWindows = { v
 				if (typeof win.onfocus === 'function') {
 					win.onfocus();
 				}
+				return;
+			}
+			index++;
+		}
+	};
+	
+	this.closeWindow = function(windowId) {
+		var wenum = Components.classes["@mozilla.org/embedcomp/window-watcher;1"]
+			.getService(Components.interfaces.nsIWindowWatcher)
+			.getWindowEnumerator();
+		var index = 1;
+		while (wenum.hasMoreElements()) {
+			var win = wenum.getNext();
+			var util = win.QueryInterface(Components.interfaces.nsIInterfaceRequestor).getInterface(Components.interfaces.nsIDOMWindowUtils);
+			var windowID = util.outerWindowID;
+			if (windowID == windowId) {
+				win.close();
 				return;
 			}
 			index++;

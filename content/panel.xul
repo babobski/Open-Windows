@@ -49,19 +49,8 @@
 		</hbox>
 	</vbox>
 	<vbox id="OpenWindows-first-tabpanel-vbox" align="stretch">
-		
-		<listbox id="openWindowsList" flex="1">
-			<listhead>
-				<listheader label="Project" />
-				<listheader label="Places" />
-			</listhead>
-			
-			<listcols>
-				<listcol flex="1" />
-				<listcol flex="1" />
-			</listcols>
-	
-		</listbox>
+		<richlistbox id="openWindowsList" flex="1">
+		</richlistbox>
 	</vbox>
 
 	<script type="application/x-javascript" src="chrome://OpenWindows/content/overlay.js" />
