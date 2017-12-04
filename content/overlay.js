@@ -2,7 +2,7 @@
  * Namespaces
  */
 if (typeof(extensions) === 'undefined') extensions = {};
-if (typeof(extensions.OpenWindows) === 'undefined') extensions.OpenWindows = { version : '1.0' };
+if (typeof(extensions.OpenWindows) === 'undefined') extensions.OpenWindows = { version : '1.1' };
 
 (function() {
 	const fsPath = require('sdk/fs/path');
